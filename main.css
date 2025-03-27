@@ -36,3 +36,23 @@ footer {
     border-radius: 30px;
     padding: 10px;
 }
+a {
+   color: rgb(39, 117, 117);
+   text-decoration: none;
+}
+a:link {
+    color: palevioletred;
+    text-decoration: underline dotted;
+}
+a:visited {
+    color: red;
+    text-decoration: underline dotted;
+}
+a:hover {
+    color: purple;
+    text-decoration: underline;
+}
+a:active {
+    color: black;
+    text-decoration: wavy underline;
+}
