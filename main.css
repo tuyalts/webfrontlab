@@ -39,6 +39,7 @@ footer {
 a {
    color: rgb(39, 117, 117);
    text-decoration: none;
+   transition: 1s 2s;
 }
 a:link {
     color: palevioletred;
@@ -51,6 +52,7 @@ a:visited {
 a:hover {
     color: purple;
     text-decoration: underline;
+    transition: 0.3s;
 }
 a:active {
     color: black;
