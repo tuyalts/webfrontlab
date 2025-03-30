@@ -25,7 +25,7 @@ header div {
 main {
     background-color: whitesmoke;
     color: rgb(249, 151, 167);
-    margin: 10px;
+    margin: 10px 10px 45px;
     border-radius: 30px;
     padding: 5px;
 }
@@ -35,7 +35,12 @@ footer {
     margin: 10px;
     border-radius: 30px;
     padding: 10px;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
 }
+
 a {
    color: rgb(39, 117, 117);
    text-decoration: none;
