@@ -58,3 +58,13 @@ a:active {
     color: black;
     text-decoration: wavy underline;
 }
+div.menu {
+    border: 3px solid;
+    border-radius: 5px;
+    width: 300px;
+    margin: 0 auto;
+}
+div.menu:hover {
+    background-color: rgb(213, 233, 181);
+    box-shadow: 0 0 15px rgb(182, 203, 147);
+}
