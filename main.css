@@ -30,7 +30,7 @@ header div {
     max-width: 400px;
 }
 main {
-    background-color: whitesmoke;
+    /* background-color: whitesmoke; */
     color: rgb(249, 151, 167);
     margin: 10px 10px 55px;
     border-radius: 30px;
