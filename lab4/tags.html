@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ломбоцыренова Туяна Владимировна. Лабораторная 4</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="D:\tuyana-lombotsyrenova\favicon.ico" type="image/x-icon">
+    <link rel="icon" href="D:\tuyana-lombotsyrenova\favicon-16x16.png">
+    <link rel="icon" href="D:\tuyana-lombotsyrenova\favicon-32x32.png">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+        }
+        main {
+            flex: 1;
+            position: relative;
+            overflow: hidden;
+        }
+        main div {
+            position: absolute;
+            width: max-content;
+            border-radius: 6px;
+            transition: 1s ease-in-out;
+            left: var(--x);
+            top: var(--y);
+            color: var(--bg);
+            transform: rotate(var(--rot));
+            font-size: var(--size);
+        }
+        main div:hover {
+            transform: scale(3) rotate(var(--rot));
+            text-shadow: 2px 2px 2px #2c3e50;
+            box-shadow: 0 0 25px rgb(96, 254, 154);
+            z-index: 10;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div>НГТУ, ФБ, Лабораторная работа 4</div>
+    </header>
+
+    <main>
+        <div class="word" style="--x:10%; --y:15%; --rot:-5deg;  --size:18px; --bg:#e74c3c;">:enabled</div>
+        <div class="word" style="--x:35%; --y:10%; --rot:10deg;  --size:20px; --bg:#8e44ad;">:first-of-type</div>
+        <div class="word" style="--x:60%; --y:5%;  --rot:-15deg; --size:22px; --bg:#3498db;">:focus-visible</div>
+        <div class="word" style="--x:80%; --y:20%; --rot:20deg;  --size:19px; --bg:#16a085;">:disabled</div>
+        <div class="word" style="--x:5%;  --y:35%; --rot:25deg;  --size:24px; --bg:#f7ddb2;">:first-child</div>
+        <div class="word" style="--x:25%; --y:30%; --rot:-12deg; --size:21px; --bg:#c0392b;">:empty</div>
+        <div class="word" style="--x:45%; --y:25%; --rot:8deg;   --size:23px; --bg:#2980b9;">:default</div>
+        <div class="word" style="--x:70%; --y:30%; --rot:-6deg;  --size:18px; --bg:#2c3e50;">:dir</div>
+        <div class="word" style="--x:90%; --y:40%; --rot:15deg;  --size:20px; --bg:#1abc9c;">:defined</div>
+        <div class="word" style="--x:15%; --y:50%; --rot:-18deg; --size:22px; --bg:#27ae60;">:blank</div>
+        <div class="word" style="--x:40%; --y:45%; --rot:12deg;  --size:19px; --bg:#9b59b6;">:buffering</div>
+        <div class="word" style="--x:65%; --y:55%; --rot:-8deg;  --size:21px; --bg:#224de6;">:checked</div>
+        <div class="word" style="--x:85%; --y:60%; --rot:5deg;   --size:24px; --bg:#34495e;">:any-link</div>
+        <div class="word" style="--x:10%; --y:70%; --rot:-10deg; --size:20px; --bg:#d35400;">:user-valid</div>
+        <div class="word" style="--x:30%; --y:65%; --rot:17deg;  --size:19px; --bg:#7f8c8d;">:picture-in-picture</div>
+        <div class="word" style="--x:55%; --y:75%; --rot:-20deg; --size:22px; --bg:#95a5a6;">:first-chiled</div>
+        <div class="word" style="--x:75%; --y:80%; --rot:9deg;   --size:18px; --bg:#5597c4;">:visited</div>
+        <div class="word" style="--x:5%;  --y:85%; --rot:-14deg; --size:21px; --bg:#ec2816;">:focus</div>
+        <div class="word" style="--x:45%; --y:90%; --rot:3deg;   --size:20px; --bg:#6c5ce7;">:link</div>
+        <div class="word" style="--x:85%; --y:95%; --rot:-5deg;  --size:23px; --bg:#00cec9;">:active</div>
+    </main>
+
+    <footer>
+        &copy; Туяна Ломбоцыренова, ФБИ-33, 2 курс, 2025 
+    </footer>
+</body>
+</html>
