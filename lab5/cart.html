@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ломбоцыренова Туяна Владимировна. Лабораторная 5</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="D:\tuyana-lombotsyrenova\favicon.ico" type="image/x-icon">
+    <link rel="icon" href="D:\tuyana-lombotsyrenova\favicon-16x16.png">
+    <link rel="icon" href="D:\tuyana-lombotsyrenova\favicon-32x32.png">
+    <script>
+        function Sum() {
+            let inputA = document.getElementById('numberA');
+            let inputB = document.getElementById('numberB');
+            let inputC = document.getElementById('numberC');
+            let inputD = document.getElementById('numberD');
+            let inputE = document.getElementById('numberE');
+            let a = parseInt(inputA.value);
+            let b = parseInt(inputB.value);
+            let c = parseInt(inputC.value);
+            let d = parseInt(inputD.value);
+            let e = parseInt(inputE.value);
+            let result = a*100 + b*80 + c*150 + d*300 + e*100;
+            let empty = document.getElementById('empt');
+            empty.innerHTML = "Общая сумма "+result;
+        }
+    </script>
+
+    <style>
+        .msg {
+            background-color: lightcyan;
+            color:black;
+            border-radius: 8%;
+            width: 100px;
+            margin: 10px;
+            padding: 5px;
+            text-align: center;
+            cursor: pointer;
+        } 
+        .bin {
+            background-color: whitesmoke;
+            border: 2px solid green;
+            margin: 10px;
+            padding: 5px;
+            width: max-content;
+            height: min-content;
+        }
+    </style>
+     
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 5
+    </header>
+
+    <main>
+        <form class="bin" id="bin">
+            <h1>Корзина товаров</h1>
+            <div>
+                <label>Яблоки (100р/шт)<br><input type="number" min="0" id="numberA" placeholder="Сколько яблок надо?"></label>
+            </div>
+            <div>
+                <label>Груши (80р/шт)<br><input type="number" min="0" id="numberB" placeholder="введите количество груш"></label><br>
+            </div>
+            <div>    
+                <label>Апельсины (150р/шт)<br><input type="number" min="0" id="numberC" placeholder="Апельсины хочешь?"></label><br>
+            </div>
+            <div>    
+                <label>Дыни (300р/шт)<br><input type="number" min="0" id="numberD" placeholder="Если не надо введите 0"></label><br>
+            </div>
+            <div>
+                <label>Мандарины (100р/шт)<br><input type="number" min="0" id="numberE" placeholder="С новым годом!"></label><br>
+            </div>
+            <div class="msg" onclick="Sum()">Рассчитать</div>
+            <div id="empt"></div>
+            <input type="reset" value="Очистить" />
+        </form>
+    </main>
+
+    <footer ondblclick="showLast()" style="cursor: pointer;">
+        &copy; Ломбоцыренова Туяна, ФБИ-33, 2 курс, 2025
+    </footer>
+
+</body>
+</html>
