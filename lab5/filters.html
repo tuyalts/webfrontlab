@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ломбоцыренова Туяна Владимировна. Лабораторная 5</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="D:\tuyana-lombotsyrenova\favicon.ico" type="image/x-icon">
+    <link rel="icon" href="D:\tuyana-lombotsyrenova\favicon-16x16.png">
+    <link rel="icon" href="D:\tuyana-lombotsyrenova\favicon-32x32.png">
+    <style>
+        
+    </style>
+    <script>
+        function blurChange() {
+            let value = document.getElementById('blureValue').value + 'px';
+            document.getElementById('blureOutput').innerText = value;
+            document.getElementById('blurImg').style.filter = 'blur(' + value + ')';
+        }
+    </script>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 6
+    </header>
+
+    <main style="color: whitesmoke;">
+        <div>
+            Фильтр blur:
+            <input type="range" min="0" max="20" value="0" onchange="blurChange()" id="blureValue">
+            <span id="blureOutput"></span>
+        </div>
+        <div><img src="pic.jpg" id="blurImg" style="width: 80%;"></div>
+    </main>
+
+    <footer>
+        &copy; Ломбоцыренова Туяна, ФБИ-33, 2 курс, 2025
+    </footer>
+
+</body>
+</html>
