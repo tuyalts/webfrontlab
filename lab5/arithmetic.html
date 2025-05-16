@@ -118,6 +118,14 @@
             let result = a**b;
             alert(a+' возвести в '+b + ' равно ' + result);
         }
+        function chageOutput(buttonNum, backColor, textColor, borderRadius, border) {
+            let output = document.getElementById('output');
+            output.innerText = 'Нажата кнопка '+ buttonNum;
+            output.style.backgroundColor = backColor;
+            output.style.color = textColor;
+            output.style.borderRadius = borderRadius;
+            output.style.border = border;
+        }
     </script>
     <style>
         .message {
@@ -130,6 +138,14 @@
             padding: 3px;
             display: inline-block;
         }
+        #output {
+            border: 1px solid green;
+            width: 300px;
+            height: 40px;
+            background-color: whitesmoke;
+            text-align: center;
+        }
+        
     </style>
 </head>
 <body>
@@ -146,6 +162,14 @@
         <div class="message" onclick="showProd()">Найти произведение чисел</div>
         <div class="message" onclick="showDiv()">Найти отношение чисел</div>
         <div class="message" onclick="showExp()">Возведние в степень</div>
+
+        <div>
+            <input type="button" value="Кнопка 1" onclick="chageOutput(1, 'red', 'yellow', '5%', '1px solid whitesmoke')">
+            <input type="button" value="Кнопка 2" onclick="chageOutput(2, 'whitesmoke', 'green', '10%', '3px dotted black')">
+            <input type="button" value="Кнопка 3" onclick="chageOutput(3, 'green', 'whitesmoke', '15%', '3px double yellow')">
+            <input type="button" value="Кнопка 4" onclick="chageOutput(4, 'pink', 'black', '10px', '3px dashed green')">
+        </div>
+        <div id="output"></div>
     </main>
 
     <footer ondblclick="showHi()" style="cursor: pointer;">
