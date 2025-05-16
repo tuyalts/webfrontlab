@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ломбоцыренова Туяна Владимировна. Лабораторная 5</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="D:\tuyana-lombotsyrenova\favicon.ico" type="image/x-icon">
+    <link rel="icon" href="D:\tuyana-lombotsyrenova\favicon-16x16.png">
+    <link rel="icon" href="D:\tuyana-lombotsyrenova\favicon-32x32.png">
+    <style>
+        #block {
+            width: 200px;
+            height: 200px;
+            border: 2px solid black;
+            background-color: rgb(46, 124, 61);
+            cursor: crosshair;
+            padding: 5px;
+        }
+    </style>
+    <script>
+        function showCoords() {
+            let x = this.event.x;
+            let y = this.event.y;
+            let div = document.getElementById('block');
+
+            if(this.event.ctrlKey) {
+                div.style.color = 'red';
+                div.innerHTML ='<b>x</b> = ' + x + 'px<br><b>y</b> = ' + y + 'px<br>' 
+                                + '<b>Нажата клавиша Ctrl</b>';
+                div.style.backgroundColor = 'whitesmoke'; }
+
+            else if(this.event.altKey) {
+                div.style.color = 'red';
+                div.innerHTML ='<b>x</b> = ' + x + 'px<br><b>y</b> = ' + y + 'px<br>' 
+                                + '<b>Нажата клавиша Alt</b>';
+                div.style.backgroundColor = 'whitesmoke'; }
+            
+            else if(this.event.shiftKey) {
+                div.style.color = 'red';
+                div.innerHTML ='<b>x</b> = ' + x + 'px<br><b>y</b> = ' + y + 'px<br>' 
+                                + '<b>Нажата клавиша Shift</b>';
+                div.style.backgroundColor = 'whitesmoke'; }
+            else {
+                div.style.color = 'black';
+                div.innerHTML = '<b>x</b> = ' + x + 'px<br><b>y</b> = ' + y + 'px';
+                div.style.backgroundColor = 'green';}
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <div>НГТУ, ФБ, Лабораторная работа 5</div>
+    </header>
+
+    <main>
+       <div id="block" onmousemove="showCoords()"></div>
+    </main>
+
+    <footer>
+        &copy; Туяна Ломбоцыренова, ФБИ-33, 2 курс, 2025 
+    </footer>
+</body>
+</html>
