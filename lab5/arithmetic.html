@@ -88,12 +88,10 @@
 
             let a = parseInt(inputA.value);
             let b = parseInt(inputB.value);
-            if(b==0) {
-                alert('На ноль делить нельзя!');
+            if(b==0 & a==0) {
+                alert('Оба поля равны нулю!');
                 inputB.focus();
-                inputB.select();
-                inputB.style.color = 'red';
-                inputB.style.borderColor = 'red';
+                inputA.focus();
                 return;
             }
 
@@ -117,8 +115,8 @@
             inputB.style.color = '';
             inputB.style.borderColor = '';
 
-            let result = a/b;
-            alert('Отношение ' + a + ' и '+b + ' равно ' + result);
+            let result = a**b;
+            alert(a+' возвести в '+b + ' равно ' + result);
         }
     </script>
     <style>
@@ -147,7 +145,7 @@
         <div class="message" onclick="showDif()">Найти разность чисел</div>
         <div class="message" onclick="showProd()">Найти произведение чисел</div>
         <div class="message" onclick="showDiv()">Найти отношение чисел</div>
-        <div class="message" onclick="showExp()">Найти отношение чисел</div>
+        <div class="message" onclick="showExp()">Возведние в степень</div>
     </main>
 
     <footer ondblclick="showHi()" style="cursor: pointer;">
