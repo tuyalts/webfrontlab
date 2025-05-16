@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ломбоцыренова Туяна Владимировна. Лабораторная 5</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="D:\tuyana-lombotsyrenova\favicon.ico" type="image/x-icon">
+    <link rel="icon" href="D:\tuyana-lombotsyrenova\favicon-16x16.png">
+    <link rel="icon" href="D:\tuyana-lombotsyrenova\favicon-32x32.png">
+    <script>
+        function Elem() {
+            const elem = event.target;
+            elem.style.opacity = 0;
+            elem.style.height= '0px';
+            elem.style.width= '0px';
+            elem.style.transition = '1s';
+        }
+        function resetCircles() {
+            const circles = document.querySelectorAll('.crcl');
+            for (let i = 0; i < circles.length; i++) { 
+                circles[i].style.opacity = 1;
+                circles[i].style.height = '80px';
+                circles[i].style.width = '80px';
+                circles[i].style.transition = '0s';
+            }
+        }
+    </script>
+    <style>
+        .crcl {
+            color: blue; border:solid; border-radius: 50%;
+            height: 80px;
+            width: 80px;
+            display: flex;
+            position: relative;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            color: black;
+            border: solid;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 5
+    </header>
+
+    <main>
+       <div class="crcl" onclick="Elem()" style="top: 100px; left: 30px; background-color: blue;">1</div>
+       <div class="crcl" onclick="Elem()" style="top: 500px; left: 90px; background-color: blueviolet;">2</div>
+       <div class="crcl" onclick="Elem()" style="top: 250px; left: 400px; background-color: pink;">3</div>
+       <div class="crcl" onclick="Elem()" style="top: 100px; left: 250px; background-color: green;">4</div>
+       <div class="crcl" onclick="Elem()" style="top: 350px; left: 78px; background-color: coral;">5</div>
+       <div class="crcl" onclick="Elem()" style="top: 150px; left: 490px; background-color: darkgray;">6</div>
+       <div class="crcl" onclick="Elem()" style="bottom: 430px; left: 320px; background-color: darkmagenta;">7</div>
+       <div class="crcl" onclick="Elem()" style="bottom: 130px; left: 500px; background-color: cornsilk;">8</div>
+       <div class="crcl" onclick="Elem()" style="bottom: 430px; left: 120px; background-color: dimgray;">9</div>
+       <div class="crcl" onclick="Elem()" style="bottom: 230px; left: 350px; background-color: fuchsia;">10</div>
+       
+       <button onclick="resetCircles()">Сборс</button>
+    </main>
+
+    <footer>
+        &copy; Ломбоцыренова Туяна, ФБИ-33, 2 курс, 2025
+    </footer>
+
+</body>
+</html>
