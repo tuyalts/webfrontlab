@@ -31,6 +31,7 @@ header div {
 }
 main {
     /* background-color: whitesmoke; */
+    height: 100%;
     color: rgb(249, 151, 167);
     margin: 10px 10px 55px;
     border-radius: 30px;
