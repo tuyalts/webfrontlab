@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ломбоцыренова Туяна Владимировна. Лабораторная 5</title>
+    <title>Ломбоцыренова Туяна Владимировна. Лабораторная 6</title>
     <link rel="stylesheet" href="../main.css">
     <link rel="shortcut icon" href="D:\tuyana-lombotsyrenova\favicon.ico" type="image/x-icon">
     <link rel="icon" href="D:\tuyana-lombotsyrenova\favicon-16x16.png">
@@ -12,21 +12,35 @@
         function showMutipletable() {
             let tbl = document.getElementById('mtable');
             tbl.innerHTML = '<h1>Таблица умножения</h1>';
-            for(i=1;i<=10;i++) {
-                let s = `<div>${i} * 7 = ${i*7}</div>`;
-                tbl.innerHTML += s;
+            let a = document.getElementById('a').value;
+            let b = document.getElementById('b').value;
+            let c = document.getElementById('c').value;
+            
+            if(b > c) {
+                tbl.innerText = 'Нельзя';
             }
+            for(i=b; i<=c; i++) {
+                let s = `<div>${i} * ${a} = ${i*a}</div>`;
+                tbl.innerHTML +=s;
+            } 
         }
-        showMutipletable();
     </script>
 </head>
 <body onload="showMutipletable()">
     <header>
-        <div>НГТУ, ФБ, Лабораторная работа 5</div>
+        <div>НГТУ, ФБ, Лабораторная работа 6</div>
     </header>
 
     <main style="color: whitesmoke;">
-        <div id="mtable"></div>
+        <div id="mtable"></div><br>
+
+        Умножить на:
+        <input type="number" value="7" id="a" min="1"><br>
+        Начать с:
+        <input type="number" value="1" id="b" min="1"><br>
+        Закончить на:
+        <input type="number" value="10" id="c"><br>
+        <input type="button" value="Таблица"  onclick="showMutipletable()">
     </main>
 
     <footer>
