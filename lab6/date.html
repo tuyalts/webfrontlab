@@ -18,8 +18,28 @@
                 <div>Дата и время для локации Японии: ${today.toLocaleString('ja-JP')}</div>
                 <div>Дата и время для локации Египта: ${today.toLocaleString('ar-EG')}</div>
                 <div>Дата и время для локации Италии: ${today.toLocaleString('it-IT')}</div>
-                <div>Дата и время для китайской локации: ${today.toLocaleString('zh-CH')}</div>
+                <div>Дата и время для китайской локации: ${today.toLocaleString('zh-CN')}</div>
             ` 
+        }
+
+        function changeColors() {
+            const header = document.getElementsByTagName('header')[0];
+            const rgb = `rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})`;
+            header.style.color = rgb;
+        }
+
+        let timerNum;
+
+        function startChangeColor() {
+            timerNum = setInterval(changeColors, 500);
+            document.getElementById('start').disabled = true;
+            document.getElementById('stop').disabled = false;
+        }
+
+        function stopChangeColor() {
+            clearInterval(timerNum);
+            document.getElementById('start').disabled = false;
+            document.getElementById('stop').disabled = true;
         }
     </script>
     <style>
@@ -31,6 +51,15 @@
         color: black;
         border-radius: 8px;
     }
+    button {
+        background-color: #eaffea;
+        margin: 5px;
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+    header {
+        transition: color 0.5s ease;
+    }
     </style>
 </head>
 <body onload="showDate()">
@@ -40,6 +69,10 @@
 
     <main style="color: whitesmoke;">
         <div id="current-date"></div>
+        <div>
+            <button id="start" onclick="startChangeColor()">Старт</button>
+            <button id="stop" onclick="stopChangeColor()">Стоп</button>
+        </div>
     </main>
 
     <footer>
