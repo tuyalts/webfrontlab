@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ломбоцыренова Туяна Владимировна. Лабораторная 7</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="D:\tuyana-lombotsyrenova\favicon.ico" type="image/x-icon">
+    <link rel="icon" href="D:\tuyana-lombotsyrenova\favicon-16x16.png">
+    <link rel="icon" href="D:\tuyana-lombotsyrenova\favicon-32x32.png">
+    <script>
+        function showPrices() {
+            const prices = [143.06, 142.50, 144.20, 143.80, 144.00, 
+                143.50, 143.90, 144.10, 143.70, 144.00];
+            const data = [ "2025-05-23","2025-05-22","2025-05-21",
+                "2025-05-20","2025-05-19","2025-05-16","2025-05-15",
+                "2025-05-14","2025-05-13","2025-05-12"];
+            
+            let table = document.getElementById('shares-table');
+            for(let i = 0; i < prices.length; i++) {
+                let tr = document.createElement('tr');
+                let tdDate = document.createElement('td');
+                tdDate.innerText = data[i];
+                tr.appendChild(tdDate);
+
+                let tdPrices = document.createElement('td');
+                tdPrices.innerText = prices[i];
+                tr.appendChild(tdPrices);
+
+                let tdDiff = document.createElement('td');
+                if(i==0) {
+                    tdDiff.innerText = '—';
+                    tdDiff.style.color = 'black';
+                }
+                else {
+                    let diff = prices[i] - prices[i-1];
+                    tdDiff.innerText = diff.toFixed(2);
+                    if(diff>0) {
+                        tdDiff.style.color = 'green';
+                    }
+                    else if (diff<0) {
+                        tdDiff.style.color = 'red';
+                    }
+                    else {
+                        tdDiff.style.color = 'black';
+                    }
+                }
+
+                tr.appendChild(tdDiff);
+                
+                table.appendChild(tr);
+            }
+            
+            let sum = 0;
+            for(let i = 0; i < prices.length; i++) {
+                sum += prices[i];
+            }
+            let average = sum / prices.length;
+            average = average.toFixed(2);
+
+            let max = Math.max(...prices).toFixed(2);
+            let min = Math.min(...prices).toFixed(2);
+
+            let detail = document.getElementById('detail');
+            detail.innerHTML = `
+                <p>Среднее значение: <strong>${average} ₽</strong></p>
+                <p>Максимальное значение: <strong>${max} ₽</strong></p>
+                <p>Минимальное значение: <strong>${min} ₽</strong></p>
+            `;
+        }
+    </script>
+
+    <style>
+        main {
+            text-align: center;
+            background-color: whitesmoke;
+            padding: 10px;
+            justify-content: center;
+        }
+        button {
+            margin: 10px;
+            height: 20px;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div>НГТУ, ФБ, Лабораторная работа 7</div>
+    </header>
+
+    <main>
+       <button onclick="showPrices()">Курс акций Softline</button>
+       <table border="1" id="shares-table"></table>
+       <div id="detail"></div>
+    </main>
+
+    <footer>
+        &copy; Туяна Ломбоцыренова, ФБИ-33, 2 курс, 2025 
+    </footer>
+</body>
+</html>
