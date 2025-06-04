@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ломбоцыренова Туяна Владимировна. Лабораторная 6</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="D:\tuyana-lombotsyrenova\favicon.ico" type="image/x-icon">
+    <link rel="icon" href="D:\tuyana-lombotsyrenova\favicon-16x16.png">
+    <link rel="icon" href="D:\tuyana-lombotsyrenova\favicon-32x32.png">
+
+    <script>
+        function showDate() {
+            let out = document.getElementById('current-date');
+            let today = new Date();
+            out.innerHTML = `
+                <div>Дата и время для русской локации: ${today.toLocaleString('ru-RU')}</div>
+                <div>Дата и время для локации Японии: ${today.toLocaleString('ja-JP')}</div>
+                <div>Дата и время для локации Египта: ${today.toLocaleString('ar-EG')}</div>
+                <div>Дата и время для локации Италии: ${today.toLocaleString('it-IT')}</div>
+                <div>Дата и время для китайской локации: ${today.toLocaleString('zh-CH')}</div>
+            ` 
+        }
+    </script>
+    <style>
+    #current-date div {
+        background-color: #eaffea;
+        border-left: 5px solid pink;
+        padding: 10px;
+        margin-bottom: 10px;
+        color: black;
+        border-radius: 8px;
+    }
+    </style>
+</head>
+<body onload="showDate()">
+    <header>
+        <div>НГТУ, ФБ, Лабораторная работа 6</div>
+    </header>
+
+    <main style="color: whitesmoke;">
+        <div id="current-date"></div>
+    </main>
+
+    <footer>
+        &copy; Туяна Ломбоцыренова, ФБИ-33, 2 курс, 2025 
+    </footer>
+</body>
+</html>
