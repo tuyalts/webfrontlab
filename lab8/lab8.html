@@ -31,11 +31,22 @@
             <hr>
 
             <h2>Цветы</h2>
-            <ul>
-                <li v-for="flower in flowers">
-                    {{ flower }} <button @click="edit(id, flower)">?</button>
-                </li>
-            </ul>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Название</th>
+                        <th>Редактировать</th>
+                    </tr>
+                </thead>
+                <tr v-for="(flower, id) in flowers">
+                    <td>
+                        {{ flower }}
+                    </td>
+                    <td>
+                        <button @click="edit(id, flower)">?</button>
+                    </td>
+                </tr>
+            </table>
             <hr>
 
             <h2>Калькулятор</h2>
@@ -56,6 +67,7 @@
                     <span class="badge text-bg-primary fs-5">{{ result }}</span>
                 </div>
             </div>
+
             
         </div>
     </main>
