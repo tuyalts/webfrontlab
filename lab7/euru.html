@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ломбоцыренова Туяна Владимировна. Лабораторная 7</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="D:\tuyana-lombotsyrenova\favicon.ico" type="image/x-icon">
+    <link rel="icon" href="D:\tuyana-lombotsyrenova\favicon-16x16.png">
+    <link rel="icon" href="D:\tuyana-lombotsyrenova\favicon-32x32.png">
+    <script>
+        function getEuroExchangeRate() {
+            const url = 'https://www.cbr-xml-daily.ru/daily_json.js';
+            fetch(url)
+                .then(function(response) {
+                    return response.json();
+                })
+                .then(function(json) {
+                    let value = json.Valute.EUR.Value;
+                    
+                    let data = new Date(json.Date).toLocaleString('ru-RU');
+
+                    let predValue = json.Valute.EUR.Previous;
+
+                    let mes = '';
+                    if(json.Valute.EUR.Previous>json.Valute.EUR.Value) {
+                        mes = 'Курс поднялся';
+                    }
+                    else {
+                        mes = 'Курс опустился';
+                    }
+
+                    let div = document.createElement('div');
+                    div.innerText = `
+                        Курс евро: ${value} 
+                        Дата: ${data} 
+                        Предыдущий курс: ${predValue} 
+                        ${mes}
+                    `;
+
+                    document.querySelector('main').appendChild(div);
+                })
+        }
+    </script>
+    <style>
+        main {
+            background-color: whitesmoke;
+            color: black;
+            padding: 30px;
+        }
+        button {
+            margin: 20px;
+            height: 20px;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div>НГТУ, ФБ, Лабораторная работа 7</div>
+    </header>
+
+    <main>
+        
+        <a href="https://www.cbr-xml-daily.ru/">API для курсов ЦБ РФ</a><br>
+        
+        <button onclick="getEuroExchangeRate()">
+            Узнать курс
+        </button>
+    </main>
+
+    <footer>
+        &copy; Туяна Ломбоцыренова, ФБИ-33, 2 курс, 2025 
+    </footer>
+</body>
+</html>
