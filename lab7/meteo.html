@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ломбоцыренова Туяна Владимировна. Лабораторная 7</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="D:\tuyana-lombotsyrenova\favicon.ico" type="image/x-icon">
+    <link rel="icon" href="D:\tuyana-lombotsyrenova\favicon-16x16.png">
+    <link rel="icon" href="D:\tuyana-lombotsyrenova\favicon-32x32.png">
+    <script>
+        function getMeteo() {
+            const url = 'https://api.open-meteo.com/v1/forecast?latitude=55.0415&longitude=82.9346&hourly=temperature_2m&timezone=Asia%2FBangkok';
+            fetch(url)
+                .then(function(response) {
+                    return response.json();
+                })
+                .then(function(json) {       
+                    let times = json.hourly.time;
+                    let temps = json.hourly.temperature_2m;
+                    let data = "2025-06-04";
+
+                    let index8 = times.indexOf(data + "T08:00");
+                    let index12 = times.indexOf(data + "T12:00");
+                    let index20 = times.indexOf(data + "T20:00");
+
+                    let temp8 = temps[index8];
+                    let temp12 = temps[index12];
+                    let temp20 = temps[index20];
+
+                    let div = document.createElement('div');
+                    div.innerText = `
+                        Температура в Нск:
+                        В 8:00 - ${temp8} градусов
+                        B 12:00 - ${temp12} градусов
+                        В 20:00 - ${temp20} градусов
+                    `;
+
+                    document.querySelector('main').appendChild(div);
+                })
+        }
+    </script>
+    <style>
+        main {
+            background-color: whitesmoke;
+            color: black;
+            padding: 30px;
+        }
+        button {
+            margin: 20px;
+            height: 20px;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div>НГТУ, ФБ, Лабораторная работа 7</div>
+    </header>
+
+    <main>
+        
+        <h1>Прогноз погоды</h1>
+        <button onclick="getMeteo()">
+            Узнать погоду
+        </button>
+    </main>
+
+    <footer>
+        &copy; Туяна Ломбоцыренова, ФБИ-33, 2 курс, 2025 
+    </footer>
+</body>
+</html>
