@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ломбоцыренова Туяна Владимировна. Лабораторная 6</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="D:\tuyana-lombotsyrenova\favicon.ico" type="image/x-icon">
+    <link rel="icon" href="D:\tuyana-lombotsyrenova\favicon-16x16.png">
+    <link rel="icon" href="D:\tuyana-lombotsyrenova\favicon-32x32.png">
+    <script src="books.js"></script>
+    <script>
+        function showBooks() {
+            const bookList = document.getElementById('bookList');
+            for (let i = 0; i < books.length; i++) {
+                const book = books[i];
+
+                const bookDiv = document.createElement('div');
+                bookDiv.className = 'book';
+                if (!book.availability) {
+                    bookDiv.classList.add('unavailable');
+                }
+
+                let bestseller = '';
+                if (book.best) {
+                    bestseller = `<sup class="bestseller">Бестселлер!</sup>`;
+                }
+
+                let availabl = '';
+                if (!book.availability) {
+                    availabl = `<span class="note">(Нет в наличии)</span>`;
+                }
+
+                bookDiv.innerHTML = `
+                    <b>${book.author}.</b>
+                    <i>${book.name}.</i>
+                    — ${book.publicationYear}
+                    <span class="price">${book.count}</span>
+                    ${bestseller}
+                    ${availabl}
+                `;
+
+                bookList.appendChild(bookDiv);
+            }
+        }
+
+    </script>
+    <style>
+
+    #bookList {
+        padding: 20px;
+    }
+
+    .book {
+        background-color: #eaffea;
+        border-left: 5px solid pink;
+        padding: 10px;
+        margin-bottom: 10px;
+        color: black;
+        border-radius: 8px;
+    }
+
+    .unavailable {
+        opacity: 0.5;
+        background-color: #f0f0f0;
+    }
+
+    .bestseller {
+        background-color: yellow;
+        font-style: italic;
+        padding: 2px 6px;
+        margin-left: 10px;
+        border-radius: 4px;
+    }
+
+    .note {
+        color: darkred;
+        margin-left: 10px;
+        font-style: italic;
+    }
+
+    .price {
+        float: right;
+        font-weight: bold;
+        color: #009933;
+    }
+</style>
+
+</head>
+<body onload="showBooks()">
+    <header>
+        <div>НГТУ, ФБ, Лабораторная работа 6</div>
+    </header>
+
+    <main style="color: whitesmoke;">
+        <h1>Список книг</h1>
+        <div id="bookList">
+
+        </div>
+    </main>
+
+    <footer>
+        &copy; Туяна Ломбоцыренова, ФБИ-33, 2 курс, 2025 
+    </footer>
+</body>
+</html>
