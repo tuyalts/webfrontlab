@@ -21,8 +21,8 @@
         <div id="app">
             <h1 :title="messageRus">{{ message }}</h1>
             <p>Счётчик: {{ counter }}</p>
-            <button @click="incCounter" v-if="counter < 10">++</button>
-            <button @click="decCounter" v-if="counter > 0">--</button>
+            <button @click="incCounter" v-if="counter < 10" class="btn btn-primary"><i class="bi bi-plus-circle"></i></button>
+            <button @click="decCounter" v-if="counter > 0" class="btn btn-primary"><i class="bi bi-dash-circle"></i></button>
             <hr>
 
             <h2>Пользователь:</h2>
@@ -58,8 +58,8 @@
                         <span v-else>{{ flower }}</span>
                     </td>
                     <td>
-                        <button @click="edit(id, flower)">?</button>
-                        <div class="spinner-border" role="status" v-if="flower ==="></div>
+                        <button @click="edit(id, flower)" class="btn btn-primary">?</button>
+                        <div class="spinner-border" role="status" v-if="flower === null"></div>
                     </td>
                 </tr>
             </table>
@@ -71,7 +71,7 @@
                     <input type="number" v-model="a" class="form-control">
                 </div>
                 <div class="col-auto">
-                    +
+                    <i class="bi bi-plus-circle"></i>
                 </div>
                 <div class="col-auto">
                     <input type="number" v-model="b" class="form-control">
